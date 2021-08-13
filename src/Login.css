@@ -1,0 +1,83 @@
+.login{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+
+.login__logo{
+    width: 100px;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login__container{
+    width: 300px;
+    display: block;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    margin-top: 100px;
+}
+
+.login__signInButton{
+    background-color: #59b200;
+    color: #FFFFFF;
+    font-weight: 700;
+    width: 11rem;
+ 
+}
+
+.login__signUpButton{
+    background-color: #8a8a92;
+    color: #fff;
+    font-weight: 700;
+    font-size: .8125rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: .0625rem solid transparent;
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    line-height: 1.42857;
+    border-radius: .25rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.login__container p {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login__container > h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.login__container > form > h5 {
+    margin-bottom: 5px;
+}
+
+.login__container > form > input {
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    width: 98%;
+}
