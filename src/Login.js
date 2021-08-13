@@ -29,7 +29,7 @@ function Login() {
                     <button onClick={loginuser} type="submit" className="btn login__signInButton"><FaCheckCircle/> VALIDER</button>
                 </form>
                 <p>Vous n'avez pas encore de compte sur Gamecool.com ?</p>
-                <Link to="/">
+                <Link to="/register">
                 <button className="btn login__signUpButton">Créer un compte</button>
                 </Link>
             </div>
