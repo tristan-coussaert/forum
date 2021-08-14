@@ -18,6 +18,7 @@ function Topic({ post }) {
     }
   return (
     <HStack key={post.id} w="100%" alignItems="flex-start">
+        <RatingButtons post={post} />
       <Box bg="gray.100" p={4} rounded="md" w="100%">
         <Text onClick={goToTopic}>{post.title}</Text>
       </Box>
