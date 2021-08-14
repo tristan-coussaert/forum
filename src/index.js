@@ -1,12 +1,19 @@
 import React from 'react';
+import { ChakraProvider } from "@chakra-ui/core";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Context } from './Context';
+import reducer, { initialState } from './reducer'
 
 ReactDOM.render(
   <React.StrictMode>
+    <ChakraProvider>
+    <Context initialState={initialState} reducer={reducer}>
     <App />
+    </Context>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
