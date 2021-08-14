@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './Login'
 import Register from './Register'
+import Post from './Post'
 import Header from './Header'
 import Home from './Home'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
@@ -41,6 +42,10 @@ function App() {
         <Route exact path="/">
             <Header />
             <Home />
+        </Route>
+        <Route exact path="/topic">
+            <Header />
+            <Post />
         </Route>
     </Switch>
     </Router>

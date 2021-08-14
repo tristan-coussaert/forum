@@ -19,6 +19,8 @@ import {
   const AddNewTopic = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [content, setContent] = useState("");
     const [isSaving, setSaving] = useState(false);
   
     const handleSubmit = async () => {
@@ -28,6 +30,8 @@ import {
   
       await db.collection("topics").add({
         title,
+        content,
+        author,
         upVotesCount: 0,
         downVotesCount: 0,
         createdAt: date.toUTCString(),
@@ -36,6 +40,7 @@ import {
   
       onClose();
       setTitle("");
+      setContent("");
       setSaving(false);
     };
   
@@ -53,10 +58,20 @@ import {
               <ModalBody>
                 <FormControl id="post-title">
                   <FormLabel>Sujet du topic</FormLabel>
-                  <Textarea
+                  <input
                     type="post-title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Saisir le titre du sujet"
+                  />
+                </FormControl>
+                <FormControl id="post-content">
+                  <FormLabel>Message</FormLabel>
+                  <Textarea
+                    type="post-content"
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                    placeholder="Saisir votre message"
                   />
                 </FormControl>
               </ModalBody>
