@@ -1,13 +1,12 @@
 import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
 import React, { useEffect, useState } from "react";
 import Topic from "./Topic";
+import AddNewTopic from "./AddNewTopic";
 import {db} from "./config";
 
 function Home(){
     const [topics, setTopics] = useState([]);
-    useEffect(() => {
-        // Hook to handle the initial fetching of posts
-    
+    useEffect(() => {   
         db.collection("topics")
           .orderBy("createdAt", "desc")
           .get()
@@ -23,6 +22,7 @@ function Home(){
 
       return (
         <>
+          <AddNewTopic/>
           <Container maxW="md" centerContent p={8}>
             <VStack spacing={8} w="100%">
               {topics.map((post) => (
