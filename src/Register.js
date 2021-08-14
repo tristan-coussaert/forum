@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import './Register.css';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {auth} from './config'
 import { RiLockPasswordFill } from 'react-icons/ri'
-import { FaUserAlt, FaCheckCircle } from 'react-icons/fa'
+import { FaUserAlt} from 'react-icons/fa'
 
 function Register() {
     const history = useHistory();

@@ -13,6 +13,10 @@
     margin-bottom: 20px;
 }
 
+.floatleft{
+    float:left;
+}
+
 .login__container{
     width: 300px;
     display: block;
@@ -27,7 +31,6 @@
 .login__signInButton{
     background-color: #59b200;
     color: #FFFFFF;
-    font-weight: 700;
     width: 11rem;
  
 }
@@ -35,7 +38,6 @@
 .login__signUpButton{
     background-color: #8a8a92;
     color: #fff;
-    font-weight: 700;
     font-size: .8125rem;
 }
 

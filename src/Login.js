@@ -15,7 +15,7 @@ function Login() {
         .then((auth) => {
             history.push('/')
         })
-        .catch(e => alert("Adresse email ou mot de passe erroné.\n"+ e.message))
+        .catch(e => alert(e.message))
     }
     return (
         <div className="login">
@@ -26,7 +26,7 @@ function Login() {
                     <input value={useremail} onChange={event => setUserEmail(event.target.value)} type="email" placeholder="Adresse Email" />
                     <h5><RiLockPasswordFill/>Password</h5>
                     <input value={userpassword} onChange={event => setUserPassword(event.target.value)} type="password" placeholder = "Mot de passe" />
-                    <button onClick={loginuser} type="submit" className="btn login__signInButton"><FaCheckCircle/> VALIDER</button>
+                    <button onClick={loginuser} type="submit" className="btn login__signInButton"><FaCheckCircle class="floatleft"/> VALIDER</button>
                 </form>
                 <p>Vous n'avez pas encore de compte sur Gamecool.com ?</p>
                 <Link to="/register">
