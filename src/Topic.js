@@ -1,6 +1,7 @@
 import { Box, HStack, Text } from "@chakra-ui/core";
 import React from "react";
 import { useHistory } from 'react-router';
+import RatingButtons from "./RatingButtons"
 
 function Topic({ post }) {
     const hist = useHistory()

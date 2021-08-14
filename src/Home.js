@@ -20,6 +20,26 @@ function Home(){
           });
       }, []);
 
+
+      useEffect(() => {
+        db.collection("topics")
+          .orderBy("createdAt", "desc")
+          .onSnapshot((querySnapshot) => {
+            const _topics = [];
+    
+            querySnapshot.forEach((doc) => {
+              _topics.push({
+                id: doc.id,
+                ...doc.data(),
+              });
+            });
+    
+            setTopics(_topics);
+          });
+      }, []);
+
+    
+
       return (
         <>
           <AddNewTopic/>
