@@ -1,6 +1,7 @@
-import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
+import { Container, Flex, Spinner, VStack, Button } from "@chakra-ui/core";
 import React, { useEffect, useState } from "react";
 import Topic from "./Topic";
+import './Home.css'
 import AddNewTopic from "./AddNewTopic";
 import {db} from "./config";
 
@@ -38,11 +39,18 @@ function Home(){
           });
       }, []);
 
+      const refreshPage = ()=>{
+        window.location.reload();
+     }
+
     
 
       return (
-        <>
-          <AddNewTopic/>
+          <div className="home">
+          <div className="button">
+          <AddNewTopic />
+          <Button onClick={refreshPage} colorScheme="blue" className="button__Refresh" >Actualiser</Button>
+          </div>
           <Container maxW="md" centerContent p={8}>
             <VStack spacing={8} w="100%">
               {topics.map((post) => (
@@ -50,7 +58,7 @@ function Home(){
               ))}
             </VStack>
           </Container>
-        </>
+          </div>
       );
 }
 

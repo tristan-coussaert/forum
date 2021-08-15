@@ -81,7 +81,7 @@ import {
                   <Button
                     onClick={handleSubmit}
                     colorScheme="blue"
-                    disabled={!title.trim()}
+                    disabled={!title.trim(), !content.trim()}
                     isLoading={isSaving}
                   >
                     Sauvegarder

@@ -1,0 +1,14 @@
+.home{
+    background-color: #DAE0E6;
+}
+
+.button{
+    text-align: center;
+    padding-top: 20px;
+    padding-left:380px;
+    margin-bottom: -15px;
+}
+
+.button__Refresh{
+    margin-left: 10px;
+}
