@@ -67,3 +67,36 @@ display: none;
     font-size: 13px;
     font-weight: 800;
 }
+
+.header__buttonLog{
+    border-radius: 9999px;
+    border: 1px solid #0079D3;
+    color: #0079D3;
+    fill: #0079D3;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 16px;
+}
+
+.header__buttonSign{
+    border-radius: 9999px;
+    border: none;
+    background-color: #0079D3;
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 16px;
+}

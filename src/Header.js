@@ -12,6 +12,33 @@ function Header() {
             auth.signOut();
         }
     }
+
+    function UserLogOut() {
+        return <button class="header__buttonLog">Se Déconnecter</button>;
+      }
+
+      function GuestLogIn() {
+        return <button class="header__buttonLog">Se Connecter</button>;
+      }
+
+      function LogButton() {
+        if (loggedinuser) {
+          return <UserLogOut />;
+        }
+        return <GuestLogIn />;
+      }
+
+      function GuestSignIn() {
+        return <button class="header__buttonSign">S'inscrire</button>;
+      }
+
+      function SignButton(){
+          if(!loggedinuser) {
+             return <GuestSignIn />
+          }
+          return null;
+      }
+
     return (
         <nav className="header">
             <Link to="/">
@@ -23,12 +50,12 @@ function Header() {
             <div className="header__nav">
                 <Link to={!loggedinuser && "/login"} className="header__link">
                     <div onClick={logoutUser} className="header__option">
-                        <span className="header__optionLineOne">Bonjour, {loggedinuser?.email}</span>
-                        <span className="header__optionLineTwo">{loggedinuser ? 'Se déconnecter' : 'Se connecter'} </span>
+                        <span className="header__optionLineOne">{loggedinuser?.email}</span>
+                        <span className="header__optionLineTwo"> <LogButton /> </span>
                     </div>
                 </Link>
                 <Link to="/register" className="header__link">
-                    <p className="header__signUp">{loggedinuser ? '' : 'S"inscrire'}</p>
+                    <p className="header__signUp"><SignButton /></p>
                 </Link>
             </div>
         </nav>
