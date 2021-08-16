@@ -15,8 +15,10 @@ import {
   } from "@chakra-ui/core";
   import React, { useState } from "react";
   import {db} from "./config";
+  import { useStateValue } from './Context';
   
   const AddNewTopic = () => {
+    const [{loggedinuser}, dispatch] = useStateValue();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
@@ -31,20 +33,21 @@ import {
       await db.collection("topics").add({
         title,
         content,
-        author,
+        author: loggedinuser.email,
         upVotesCount: 0,
         downVotesCount: 0,
         createdAt: date.toUTCString(),
         updatedAt: date.toUTCString(),
       });
+
+      console.log(loggedinuser.email);
   
       onClose();
       setTitle("");
       setContent("");
-      setAuthor("");
       setSaving(false);
     };
-  
+
     return (
       <>
         <Button onClick={onOpen} colorScheme="blue">
