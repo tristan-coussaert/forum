@@ -9,11 +9,11 @@ import reducer, { initialState } from './reducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
     <Context initialState={initialState} reducer={reducer}>
+    <ChakraProvider>
     <App />
-    </Context>
     </ChakraProvider>
+    </Context>
   </React.StrictMode>,
   document.getElementById('root')
 );
