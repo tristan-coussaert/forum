@@ -3,7 +3,7 @@ import './Header.css';
 import { Link } from 'react-router-dom'
 import { useStateValue } from './Context';
 import { auth } from './config';
-import logo from './assets/gamecool.png';
+import logo from './assets/Forum-logo.png';
 
 function Header() {
     const [{loggedinuser}, dispatch] = useStateValue();
@@ -45,7 +45,7 @@ function Header() {
             <img className="header__logo" src={logo} alt="logo" />
             </Link>
             <div className="header__search">
-                <input type="text" className="header__searchInput" placeholder="Rechercher dans Gamecool" />
+                <input type="text" className="header__searchInput" placeholder="Rechercher dans Forum" />
             </div>
             <div className="header__nav">
                 <Link to={!loggedinuser && "/login"} className="header__link">

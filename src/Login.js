@@ -28,7 +28,7 @@ function Login() {
                     <input value={userpassword} onChange={event => setUserPassword(event.target.value)} type="password" placeholder = "Mot de passe" />
                     <button onClick={loginuser} type="submit" className="btn login__signInButton"><FaCheckCircle class="floatleft"/> VALIDER</button>
                 </form>
-                <p>Vous n'avez pas encore de compte sur Gamecool.com ?</p>
+                <p>Vous n'avez pas encore de compte sur Forum.com ?</p>
                 <Link to="/register">
                 <button className="btn login__signUpButton">Créer un compte</button>
                 </Link>
