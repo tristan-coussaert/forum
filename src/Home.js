@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import Topic from "./Topic";
 import './Home.css'
 import AddNewTopic from "./AddNewTopic";
+import { useStateValue } from './Context';
 import {db} from "./config";
+import { Link } from "react-router-dom";
 
 function Home(){
+    const [{loggedinuser}, dispatch] = useStateValue();
     const [topics, setTopics] = useState([]);
     useEffect(() => {   
         db.collection("topics")
@@ -43,12 +46,19 @@ function Home(){
         window.location.reload();
      }
 
+     function AddTopic() {
+      if (loggedinuser) {
+        return <AddNewTopic />;
+      }
+      return <Link to={"/login"} className="header__link"><AddNewTopic /></Link>;
+    }
+
     
 
       return (
           <div className="home">
           <div className="button">
-          <AddNewTopic />
+          <AddTopic />
           <Button onClick={refreshPage} colorScheme="blue" className="button__Refresh" >Actualiser</Button>
           </div>
           <Container maxW="md" centerContent p={8}>
