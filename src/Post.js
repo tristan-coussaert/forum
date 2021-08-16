@@ -4,11 +4,14 @@ import { useLocation } from 'react-router';
 import {db} from "./config";
 import './Post.css'
 import AddNewComment from "./AddNewComment";
+import { useStateValue } from './Context';
+import { Link } from "react-router-dom";
 
 
 function Post({id, title, content}){
 
     const location = useLocation();
+    const [{loggedinuser}, dispatch] = useStateValue();
     const [topics, setTopics] = useState([]);
     useEffect(() => {   
         db.collection("topics").doc(location.state.id).collection("comments")
@@ -41,13 +44,20 @@ function Post({id, title, content}){
           });
       }, []);
 
+      function AddComment() {
+        if (loggedinuser) {
+          return <AddNewComment id={location.state.id} />;
+        }
+        return <Link to={"/login"} className="header__link"><AddNewComment id={location.state.id}/></Link>;
+      }
+
     return(
         <div className="post">
         <Container maxW="md" centerContent p={8}>
             <VStack spacing={8} w="100%">
             <Heading>Sujet : {location.state.title}</Heading>
             <div className="button__addNewComment" >
-            <AddNewComment className="button__addNewComment" id={location.state.id} />
+            <AddComment/>
             </div>
              <Box bg="gray.100" p={4} rounded="md" w="100%">
                 <Text>{location.state.title}</Text>

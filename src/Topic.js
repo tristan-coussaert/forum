@@ -1,7 +1,7 @@
 import { Box, HStack, Text } from "@chakra-ui/core";
 import React from "react";
 import { useHistory } from 'react-router';
-import RatingButtons from "./RatingButtons"
+import RatingButtons from "./RatingButtons";
 
 function Topic({ post }) {
     const hist = useHistory()
@@ -16,6 +16,7 @@ function Topic({ post }) {
             }
         })
     }
+
   return (
     <HStack key={post.id} w="100%" alignItems="flex-start">
         <RatingButtons post={post} />
