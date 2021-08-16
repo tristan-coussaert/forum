@@ -41,6 +41,7 @@ import {
       onClose();
       setTitle("");
       setContent("");
+      setAuthor("");
       setSaving(false);
     };
   

@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import { Box, HStack, Text, Container, VStack, Textarea, Heading } from "@chakra-ui/core";
+import { Box, HStack, Text, Container, VStack, Heading } from "@chakra-ui/core";
 import { useLocation } from 'react-router';
 import {db} from "./config";
 import './Post.css'
