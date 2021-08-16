@@ -6,9 +6,10 @@ import './Post.css'
 import AddNewComment from "./AddNewComment";
 import { useStateValue } from './Context';
 import { Link } from "react-router-dom";
+import { FaTextWidth } from 'react-icons/fa';
 
 
-function Post({id, title, content}){
+function Post(){
 
     const location = useLocation();
     const [{loggedinuser}, dispatch] = useStateValue();
@@ -60,7 +61,8 @@ function Post({id, title, content}){
             <AddComment/>
             </div>
              <Box bg="gray.100" p={4} rounded="md" w="100%">
-                <Text>{location.state.title}</Text>
+                <Text>{location.state.content}</Text>
+                <Text>{location.state.author}</Text>
               </Box>
             </VStack>
           </Container>

@@ -1,11 +1,9 @@
 import { IconButton, Text, VStack } from "@chakra-ui/core";
 import React, { useEffect, useState } from "react";
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
-import { useStateValue } from './Context';
 import {db} from "./config";
 
 function RatingButtons({ post }) {
-    const [{loggedinuser}, dispatch] = useStateValue();
     const [isVoting, setVoting] = useState(false);
     const [votedPosts, setVotedPosts] = useState([]);
 
@@ -49,6 +47,7 @@ function RatingButtons({ post }) {
       await db.collection("topics").doc(post.id).set({
         title: post.title,
         content: post.content,
+        author:post.author,
         upVotesCount,
         downVotesCount,
         createdAt: post.createdAt,

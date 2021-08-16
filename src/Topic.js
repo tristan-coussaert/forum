@@ -13,7 +13,8 @@ function Topic({ post }) {
             state: {
                 id: post.id,                
                 title: post.title,
-                content:post.content
+                content:post.content,
+                author:post.author
             }
         })
     }
