@@ -10,6 +10,7 @@
 
 .box{
     cursor:pointer;
+    max-width: 580px;
 }
 
 .box:hover{

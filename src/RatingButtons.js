@@ -41,7 +41,7 @@ function RatingButtons({ post }) {
       if (type === "upvote") {
         upVotesCount = upVotesCount + 1;
       } else {
-        downVotesCount = downVotesCount + 1;
+        upVotesCount = upVotesCount - 1;
       }
   
       await db.collection("topics").doc(post.id).set({
@@ -83,8 +83,6 @@ function RatingButtons({ post }) {
           <Text bg="gray.100" rounded="md" w="100%" p={1}>
             {post.upVotesCount}
           </Text>
-        </VStack>
-        <VStack>
           <IconButton
             size="lg"
             colorScheme="yellow"
@@ -93,10 +91,7 @@ function RatingButtons({ post }) {
             onClick={() => handleClick("downvote")}
             isLoading={isVoting}
             isDisabled={checkIfPostIsAlreadyVoted()}
-          />
-          <Text bg="gray.100" rounded="md" w="100%" p={1}>
-            {post.downVotesCount}
-          </Text>
+          />    
         </VStack>
       </>
     );
