@@ -1,0 +1,18 @@
+.author{
+    padding-left: 400px;
+    padding-top: 20px;
+}
+
+.date{
+    padding-left: 320px;
+    
+}
+
+.box{
+    cursor:pointer;
+}
+
+.box:hover{
+    border: 1px solid #898989;
+    border-radius: 5px;
+}
