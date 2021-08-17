@@ -6,7 +6,6 @@ import './Post.css'
 import AddNewComment from "./AddNewComment";
 import { useStateValue } from './Context';
 import { Link } from "react-router-dom";
-import { FaTextWidth } from 'react-icons/fa';
 
 
 function Post(){
@@ -73,6 +72,8 @@ function Post(){
                   <HStack key={post.id} w="100%" alignItems="flex-start">
                 <Box bg="gray.100" p={4} rounded="md" w="100%">
                   <Text>{post.content}</Text>
+                  <Text>{post.author}</Text>
+                  <Text>{post.createdAt}</Text>
                 </Box>
               </HStack>
               ))}

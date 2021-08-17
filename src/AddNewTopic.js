@@ -29,6 +29,7 @@ import {
       setSaving(true);
   
       const date = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit', second:'2-digit' };
   
       await db.collection("topics").add({
         title,
@@ -36,8 +37,8 @@ import {
         author: loggedinuser.email,
         upVotesCount: 0,
         downVotesCount: 0,
-        createdAt: date.toUTCString(),
-        updatedAt: date.toUTCString(),
+        createdAt: date.toLocaleDateString('fr-FR',options),
+        updatedAt: date.toLocaleDateString('fr-FR',options)
       });
 
       console.log(loggedinuser.email);

@@ -25,6 +25,7 @@ function Topic({ post }) {
       <Box bg="gray.100" p={4} rounded="md" w="100%" onClick={goToTopic}>
         <Text>{post.title}</Text>
         <Text>{post.author}</Text>
+        <Text>{post.createdAt}</Text>
       </Box>
     </HStack>
   );

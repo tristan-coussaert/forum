@@ -15,11 +15,11 @@ import {
   } from "@chakra-ui/core";
   import React, { useState } from "react";
   import {db} from "./config";
+  import { useStateValue } from './Context';
 
   function AddNewComment ({id}) {
 
-    console.log(id);
-
+    const [{loggedinuser}, dispatch] = useStateValue();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [content, setContent] = useState("");
     const [isSaving, setSaving] = useState(false);
@@ -31,6 +31,7 @@ import {
     
         await db.collection("topics").doc(id).collection("comments").add({
           content,
+          author: loggedinuser.email,
           upVotesCount: 0,
           downVotesCount: 0,
           createdAt: date.toUTCString(),
