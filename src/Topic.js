@@ -15,7 +15,8 @@ function Topic({ post }) {
                 id: post.id,                
                 title: post.title,
                 content:post.content,
-                author:post.author
+                author:post.author,
+                createdAt:post.createdAt
             }
         })
     }

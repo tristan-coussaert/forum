@@ -59,21 +59,17 @@ function Post(){
             <div className="button__addNewComment" >
             <AddComment/>
             </div>
-             <Box bg="gray.100" p={4} rounded="md" w="100%">
+             <Box bg="gray.100" p={4} rounded="md" w="100%" class="box__topic">
                 <Text>{location.state.content}</Text>
-                <Text>{location.state.author}</Text>
+                <Text className="end">Publié par {location.state.author}</Text>
+                <Text className="end">Le {location.state.createdAt}</Text>
               </Box>
-            </VStack>
-          </Container>
-
-        <Container maxW="md" centerContent p={8}>
-            <VStack spacing={8} w="100%">
               {topics.map((post) => (
                   <HStack key={post.id} w="100%" alignItems="flex-start">
                 <Box bg="gray.100" p={4} rounded="md" w="100%">
                   <Text>{post.content}</Text>
-                  <Text>{post.author}</Text>
-                  <Text>{post.createdAt}</Text>
+                  <Text className="end">Publié par {post.author}</Text>
+                  <Text className="end">Le {post.createdAt}</Text>
                 </Box>
               </HStack>
               ))}
