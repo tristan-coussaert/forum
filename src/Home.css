@@ -3,13 +3,29 @@
     background-color: #DAE0E6;
 }
 
-.button{
-    text-align: center;
-    padding-top: 20px;
-    padding-left:230px;
-    margin-bottom: -15px;
-}
-
 .button__Refresh{
     margin-left: 10px;
+}
+
+.searchbar{
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+
+.searchbar__input{
+    height: 35px;
+    padding-right: 30px;
+    border-radius: 5px;
+    border: 1px solid #EDEFF1;
+    background-color: #F6F7F8;
+    width: 280px;
+}
+
+.element{
+    display: flex;
+    flex-direction: row;
+    margin-left: 32%;
+    margin-bottom: -15px;
+    padding-top: 20px;
 }
