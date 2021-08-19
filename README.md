@@ -1,3 +1,19 @@
+# Forum
+
+Ce projet est un forum de type Reddit-like réalisé dans le cadre de la matière Aclab.
+
+Les technologies utilisées sont React et Firebase.
+
+# Lancement du projet
+
+Pour lancer le projet, il suffit de git clone l'url du projet, se placer à la racine de celui-ci puis de lancer la commande :
+
+```
+docker-compose up
+```
+
+Le projet sera ensuite lancé sur `localhost:3000`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
