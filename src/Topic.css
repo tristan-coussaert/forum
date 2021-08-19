@@ -1,16 +1,16 @@
 .author{
-    padding-left: 390px;
     padding-top: 20px;
+    text-align: end;
 }
 
 .date{
-    padding-left: 290px;
-    
+    text-align: end;
 }
 
 .box{
     cursor:pointer;
     max-width: 577px;
+    min-width: 577px;
 }
 
 .box:hover{

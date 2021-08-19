@@ -14,8 +14,8 @@ function Register() {
         event.preventDefault();
         auth.createUserWithEmailAndPassword(useremail,userpassword)
         .then((auth) => {
-            history.push('/login')
-            alert("Votre compte a été créé !\nVous pouvez dès à présent vous connecter.")
+            history.push('/')
+            alert("Votre compte a été créé !")
         })
         .catch(e => alert(e.message))
     }
