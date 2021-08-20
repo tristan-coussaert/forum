@@ -14,8 +14,9 @@ function Header() {
     }
 
     function UserLogOut() {
-        return <Link to={"/"}><button className="header__buttonLog">Se Déconnecter</button></Link>;
-      }
+        return <button className="header__buttonLog">Se Déconnecter</button>
+    }
+      
 
       function GuestLogIn() {
         return <Link to={"/login"}><button className="header__buttonLog">Se Connecter</button></Link>;
