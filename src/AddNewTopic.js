@@ -43,10 +43,23 @@ import {
       console.log(loggedinuser.email);
   
       onClose();
-      setTitle("");
-      setContent("");
       setSaving(false);
     };
+
+    const btn = title === '' || content === '' ? <Button
+    onClick={handleSubmit}
+    colorScheme="blue"
+    disabled
+    isLoading={isSaving}
+  >
+    Sauvegarder
+  </Button> : <Button
+    onClick={handleSubmit}
+    colorScheme="blue"
+    isLoading={isSaving}
+  >
+    Sauvegarder
+  </Button>
 
     return (
       <>
@@ -82,14 +95,7 @@ import {
               <ModalFooter>
                 <HStack spacing={4}>
                   <Button onClick={onClose}>Fermer</Button>
-                  <Button
-                    onClick={handleSubmit}
-                    colorScheme="blue"
-                    disabled={!title.trim(), !content.trim()}
-                    isLoading={isSaving}
-                  >
-                    Sauvegarder
-                  </Button>
+                  {btn}
                 </HStack>
               </ModalFooter>
             </ModalContent>

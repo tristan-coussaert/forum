@@ -14,11 +14,11 @@ function Header() {
     }
 
     function UserLogOut() {
-        return <Link to={"/"}><button class="header__buttonLog">Se Déconnecter</button></Link>;
+        return <Link to={"/"}><button className="header__buttonLog">Se Déconnecter</button></Link>;
       }
 
       function GuestLogIn() {
-        return <button class="header__buttonLog">Se Connecter</button>;
+        return <Link to={"/login"}><button className="header__buttonLog">Se Connecter</button></Link>;
       }
 
       function LogButton() {
@@ -29,7 +29,7 @@ function Header() {
       }
 
       function GuestSignIn() {
-        return <button class="header__buttonSign">S'inscrire</button>;
+        return <button className="header__buttonSign">S'inscrire</button>;
       }
 
       function SignButton(){
@@ -48,12 +48,10 @@ function Header() {
                 <input type="text" className="header__searchInput" placeholder="Rechercher dans Forum" />
             </div>
             <div className="header__nav">
-                <Link to={!loggedinuser && "/login"} className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">{loggedinuser?.email}</span>
                         <span className="header__optionLineTwo" onClick={logoutUser}> <LogButton /> </span>
                     </div>
-                </Link>
                 <Link to="/register" className="header__link">
                     <p className="header__signUp"><SignButton /></p>
                 </Link>

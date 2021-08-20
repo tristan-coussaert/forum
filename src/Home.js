@@ -81,8 +81,8 @@ function Home(){
             id="header-search"
             placeholder="Rechercher un sujet"
             name="s"
-            class="searchbar__input"
-            autocomplete="off"
+            className="searchbar__input"
+            autoComplete="off"
         />
           </div>
           <div className="button">

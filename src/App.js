@@ -12,6 +12,7 @@ import { useStateValue } from './Context';
 
 function App() {
   const [{loggedinuser},dispatch] = useStateValue();
+  console.log(loggedinuser);
   useEffect(()=> {
     const unsubscribe = auth.onAuthStateChanged((userauth) => {
       if(userauth){
