@@ -18,10 +18,9 @@ import {
   import { useStateValue } from './Context';
   
   const AddNewTopic = () => {
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState("");
     const [content, setContent] = useState("");
     const [isSaving, setSaving] = useState(false);
   

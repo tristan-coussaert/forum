@@ -19,7 +19,7 @@ import {
 
   function AddNewComment ({id}) {
 
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [content, setContent] = useState("");
     const [isSaving, setSaving] = useState(false);

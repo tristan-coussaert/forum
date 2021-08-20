@@ -5,6 +5,7 @@ export const initialState = {
 const reducer = (state, action) => {
     
     switch(action.type){
+        default:
         case 'SET_LOGIN':
             return {
                 ...state,

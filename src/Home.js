@@ -8,7 +8,7 @@ import {db} from "./config";
 import { Link } from "react-router-dom";
 
 function Home(){
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
     const [topics, setTopics] = useState([]);
     const { search } = window.location;
     const query = new URLSearchParams(search).get('s');
@@ -54,7 +54,7 @@ function Home(){
       if (loggedinuser) {
         return <AddNewTopic />;
       }
-      return <Link to={"/login"} className="header__link"><AddNewTopic /></Link>;
+      return <Link to={"/login"}><AddNewTopic /></Link>;
     }
 
     const filterPosts = (topics, query) => {

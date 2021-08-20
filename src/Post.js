@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function Post(){
 
     const location = useLocation();
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
     const [topics, setTopics] = useState([]);
     useEffect(() => {   
         db.collection("topics").doc(location.state.id).collection("comments")
@@ -25,7 +25,7 @@ function Post(){
     
             setTopics(data);
           });
-      }, []);
+      }, [location.state.id]);
 
       useEffect(() => {
         db.collection("topics").doc(location.state.id).collection("comments")
@@ -42,7 +42,7 @@ function Post(){
     
             setTopics(_topics);
           });
-      }, []);
+      }, [location.state.id]);
 
       function AddComment() {
         if (loggedinuser) {

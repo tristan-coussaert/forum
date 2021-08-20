@@ -3,7 +3,6 @@ import React from "react";
 import { useHistory } from 'react-router';
 import './Topic.css'
 import RatingButtons from "./RatingButtons";
-import { useStateValue } from './Context';
 
 function Topic({ post }) {
     const hist = useHistory()

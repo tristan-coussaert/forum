@@ -11,7 +11,7 @@ import {useEffect} from 'react'
 import { useStateValue } from './Context';
 
 function App() {
-  const [{loggedinuser}, dispatch] = useStateValue();
+  const [{loggedinuser},dispatch] = useStateValue();
   useEffect(()=> {
     const unsubscribe = auth.onAuthStateChanged((userauth) => {
       if(userauth){
@@ -29,7 +29,7 @@ function App() {
     return () => {
       unsubscribe();
     }
-  },[])
+  },[dispatch])
   return (
     <Router>
       <Switch>

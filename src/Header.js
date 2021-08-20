@@ -6,7 +6,7 @@ import { auth } from './config';
 import logo from './assets/Forum-logo.png';
 
 function Header() {
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
     const logoutUser = () => {
         if(loggedinuser){
             auth.signOut();
@@ -14,7 +14,7 @@ function Header() {
     }
 
     function UserLogOut() {
-        return <button class="header__buttonLog">Se Déconnecter</button>;
+        return <Link to={"/"}><button class="header__buttonLog">Se Déconnecter</button></Link>;
       }
 
       function GuestLogIn() {
@@ -49,9 +49,9 @@ function Header() {
             </div>
             <div className="header__nav">
                 <Link to={!loggedinuser && "/login"} className="header__link">
-                    <div onClick={logoutUser} className="header__option">
+                    <div className="header__option">
                         <span className="header__optionLineOne">{loggedinuser?.email}</span>
-                        <span className="header__optionLineTwo"> <LogButton /> </span>
+                        <span className="header__optionLineTwo" onClick={logoutUser}> <LogButton /> </span>
                     </div>
                 </Link>
                 <Link to="/register" className="header__link">
