@@ -20,7 +20,7 @@ function Login() {
     return (
         <div className="login">
             <div className="login__container">
-                <h1>Se connecter</h1>
+                <h1  className="login__title">Se connecter</h1>
                 <form>
                     <h5><FaUserAlt/> E-mail</h5>
                     <input value={useremail} onChange={event => setUserEmail(event.target.value)} type="email" placeholder="Adresse Email" />
@@ -28,6 +28,7 @@ function Login() {
                     <input value={userpassword} onChange={event => setUserPassword(event.target.value)} type="password" placeholder = "Mot de passe" />
                     <button onClick={loginuser} type="submit" className="btn login__signInButton"><FaCheckCircle class="floatleft"/> VALIDER</button>
                 </form>
+                <Link to="/forgetpassword" className="login__forgetpassword">Mot de passe oublié ? cliquez ici !</Link>
                 <p>Vous n'avez pas encore de compte sur Forum.com ?</p>
                 <Link to="/register">
                 <button className="btn login__signUpButton">Créer un compte</button>

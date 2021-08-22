@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import {auth} from './config'
 import {useEffect} from 'react'
 import { useStateValue } from './Context';
+import ForgetPassword from './ForgetPassword';
 
 function App() {
   const [{loggedinuser},dispatch] = useStateValue();
@@ -35,10 +36,16 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/login">
+            <Header />
             <Login />
         </Route>
         <Route exact path="/register">
+            <Header />
             <Register />
+        </Route>
+        <Route exact path="/forgetpassword">
+            <Header />
+            <ForgetPassword />
         </Route>
         <Route exact path="/">
             <Header />

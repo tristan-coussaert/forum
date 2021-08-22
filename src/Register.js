@@ -22,7 +22,7 @@ function Register() {
     return (
         <div className="register">
             <div className="register__container">
-                <h1>Ajouter un compte</h1>
+                <h1 className="register__title">Créer un compte</h1>
                 <form>
                     <h5><FaUserAlt/> E-mail</h5>
                     <input value={useremail} onChange={event => setUserEmail(event.target.value)} type="email" placeholder="Votre adresse email" />

@@ -29,6 +29,10 @@
     border: 0;
 }
 
+.register__title{
+    font-size: 23px;
+}
+
 .btn {
     display: inline-block;
     margin-bottom: 0;
